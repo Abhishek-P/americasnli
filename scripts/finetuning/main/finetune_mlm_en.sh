@@ -1,7 +1,8 @@
 #!/bin/bash
 
-seed=${2}
 lang=${1}
+seed=${2}
+model=/rc_scratch/abpu9500/americasnli/mlm/${lang}/final_model/
 
 python run_finetuning.py \
     --collator_config configs/collator/finetuning/collator_default.yaml \
@@ -14,6 +15,6 @@ python run_finetuning.py \
     experiment_name=zero_shot_mlm_en_${lang}_${seed} \
     seed=${seed} \
     use_wandb=True \
-    model_settings.init.pretrained_model_name_or_path=/rc_scratch/abeb4417/americasnli/mlm/${lang}/final_model/ \
-    log_directory=/projects/abeb4417/americasnli/logs/mlm_en/ \
-    output_directory=/rc_scratch/abeb4417/americasnli/mlm_en/
+    model_settings.init.pretrained_model_name_or_path=${model} \
+    log_directory=/rc_scratch/abpu9500/logs/americasnli/ft/ \
+    output_directory=/rc_scratch/abpu9500/model/americasnli/ft/
