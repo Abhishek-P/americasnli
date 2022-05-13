@@ -5,8 +5,8 @@ seed=${2}
 input_model=${3}
 model_name=${4}
 model_dir=/rc_scratch/abpu9500/americasnli/mlm/${lang}/final_model/
-
-python run_finetuning.py \
+export AMERICAS_DIR=/projects/abpu9500/americasnli
+python $AMERICAS_DIR/run_finetuning.py \
     --collator_config configs/collator/finetuning/collator_default.yaml \
     --dataset_config configs/dataset/finetuning/anli_default.yaml \
     --experiment_config configs/experiment/finetuning/nli_default.yaml \
