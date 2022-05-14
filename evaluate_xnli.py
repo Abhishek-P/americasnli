@@ -14,23 +14,22 @@ def model_init():
                                                                  num_labels=3)
 
 
-
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--test_file', default='data/anli_final/test/anli.test.tsv')
-    parser.add_argument('--eval_file', default='data/anli_final/dev/anli.dev.tsv')
+    parser.add_argument('--test_file', default='data/anli/test.tsv')
+    parser.add_argument('--eval_file', default='data/anli/dev.tsv')
     parser.add_argument('--test_language', default='en')
     parser.add_argument('--test_format', default='anli')
     parser.add_argument('--eval_format', default='anli')
     parser.add_argument('--langs')
 
-    parser.add_argument('--log_dir', default='logs/evaluation/')
-    parser.add_argument('--xnli_dir', default='data/xnli/')
-    parser.add_argument('--anli_dir', default='data/anli/')
+    parser.add_argument('--log_dir', default='/rc_scratch/abpu9500/logs/')
+    parser.add_argument('--xnli_dir', default='/rc_scratch/abpu9500/datasets/xnli/')
+    parser.add_argument('--anli_dir', default='/rc_scratch/abpu9500/datasets/anli/')
     parser.add_argument('--output_dir')
-    parser.add_argument('--experiment_name')
     parser.add_argument('--max_seq_len', default=256)
+    parser.add_argument('--experiment_name')
     parser.add_argument('--wandb_name')
 
     parser.add_argument('--load_from_path', default='xlm-roberta-base')
@@ -128,7 +127,6 @@ if __name__ == '__main__':
 
     logging.info('Test: {}'.format(','.join(test_scores_str)))
     logging.info('Eval: {}'.format(','.join(eval_scores_str)))
-
 
 
 
