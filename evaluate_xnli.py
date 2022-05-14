@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
     logging.info('Loading model from: {}'.format(args.load_from_path))
 
-    trainer = Trainer(model=model,compute_metrics=xnli_metrics,args=TrainingArguments(output_dir='/rc_scratch/abeb4417/tempevaldir/', per_device_eval_batch_size=32))
+    trainer = Trainer(model=model,compute_metrics=xnli_metrics,args=TrainingArguments(output_dir=args.output_dir, per_device_eval_batch_size=32))
 
     langs = [args.langs]
     test_format = args.test_format
