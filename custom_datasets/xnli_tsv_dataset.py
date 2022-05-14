@@ -63,6 +63,7 @@ class xnliTSVDataset(torch.utils.data.Dataset):
                     continue
 
                 split = line.strip().split('\t')
+                print(len(inps))
                 print("line",line)
                 print("split", split[3])
 
