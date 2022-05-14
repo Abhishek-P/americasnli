@@ -105,6 +105,7 @@ if __name__ == '__main__':
             lang=lang,
             format=eval_format
         )
+        logging.info("Eval has %s and Test has %s samples", len(eval_dataset), len(test_dataset))
 
         eval_predictions = trainer.predict(eval_dataset)
         test_predictions = trainer.predict(test_dataset)
