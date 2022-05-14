@@ -63,6 +63,8 @@ class xnliTSVDataset(torch.utils.data.Dataset):
                     continue
 
                 split = line.strip().split('\t')
+                print("line",line)
+                print("split", split[3])
 
                 #Data input format: (premise, hypothesis, label)
 
@@ -77,9 +79,9 @@ class xnliTSVDataset(torch.utils.data.Dataset):
                     inps.append((split[0], split[1], label2id[split[2]]))
                     labels_found.add(split[2])
                 elif self.format == 'anli':
-                    if split[1] == self.lang:
-                        inps.append((split[2], split[3], label2id[split[4]]))
-                        labels_found.add(split[4])
+                    if split[0] == self.lang:
+                        inps.append((split[1], split[2], label2id[split[3]]))
+                        labels_found.add(split[3])
                 elif self.format in ['translate-train']: #xnli_unseen.dev.tsv, translate_train.dev.tsv, train/${lang}.tsv
                     if split[0] == self.lang:
                         inps.append((split[1], split[2], label2id[split[3]]))

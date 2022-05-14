@@ -97,7 +97,6 @@ if __name__ == '__main__':
             lang=lang,
             format=test_format
         )
-
         eval_dataset = xnliTSVDataset(
             file=eval_file,
             tokenizer=xlmr_tokenizer,
@@ -109,6 +108,7 @@ if __name__ == '__main__':
 
         eval_predictions = trainer.predict(eval_dataset)
         test_predictions = trainer.predict(test_dataset)
+
 
         logging.info('Language: {}'.format(lang))
         logging.info('Test accuracy: {:.2f}'.format(test_predictions.metrics['accuracy'] * 100))
