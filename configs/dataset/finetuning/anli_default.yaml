@@ -9,8 +9,8 @@ dataset_settings:
     dataset_type: eval
     anli_language: ['aym', 'bzd', 'cni', 'gn', 'hch', 'nah', 'oto', 'quy', 'shp', 'tar']
     xnli_language: ['en']
-    anli_dir: /projects/abeb4417/data/americasnli_data/anli_final/dev/anli.dev.tsv
-    xnli_dir: /projects/abeb4417/data/xnli/xnli.dev.tsv
+    anli_dir: /rc_scratch/abpu9500/datasets/anli/dev.tsv
+    xnli_dir: /rc_scratch/abpu9500/datasets/xnli/xnli.dev.tsv
     max_sequence_length: 256
   test_dataset:
     dataset_type: anli
