@@ -108,6 +108,7 @@ if __name__ == '__main__':
 
         eval_predictions = trainer.predict(eval_dataset)
         test_predictions = trainer.predict(test_dataset)
+        print(eval_predictions.metrics.keys())
 
 
         logging.info('Language: {}'.format(lang))
