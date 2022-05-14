@@ -111,8 +111,8 @@ if __name__ == '__main__':
         test_predictions = trainer.predict(test_dataset)
 
         logging.info('Language: {}'.format(lang))
-        logging.info('Test accuracy: {:.2f}'.format(test_predictions.metrics['test_accuracy'] * 100))
-        logging.info('Eval accuracy: {:.2f}'.format(eval_predictions.metrics['test_accuracy'] * 100))
+        logging.info('Test accuracy: {:.2f}'.format(test_predictions.metrics['accuracy'] * 100))
+        logging.info('Eval accuracy: {:.2f}'.format(eval_predictions.metrics['accuracy'] * 100))
 
         test_scores.append(test_predictions.metrics['accuracy'] * 100)
         eval_scores.append(eval_predictions.metrics['accuracy'] * 100)
@@ -131,9 +131,5 @@ if __name__ == '__main__':
 
 
     logging.info('Done')
-
-
-
-
 
 
