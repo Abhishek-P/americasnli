@@ -13,5 +13,6 @@ training_arguments:
   greater_is_better: True
   load_best_model_at_end: True
   save_total_limit: 3
+  resume_from_checkpoint: True
 other_arguments:
   early_stopping_patience: 15
